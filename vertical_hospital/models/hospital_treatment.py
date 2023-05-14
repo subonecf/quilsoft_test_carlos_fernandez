@@ -13,5 +13,5 @@ class HospitalTreatment(models.Model):
     @api.constrains('code')
     def _check_code(self):
         for record in self:
-            if '026' in record.code:
+            if '026' == record.code:
                 raise ValidationError(_('El código no puede contener la secuencia "026".'))

@@ -23,7 +23,7 @@ class HospitalPatient(models.Model):
   
     # Fields Many2many
     treatment_ids = fields.Many2many('hospital.treatment', string='Tratamientos')
-
+    # Fields Many2one
     state_id = fields.Many2one('hospital.patient.state', string='Estado',  default=lambda self: self.env.ref('vertical_hospital.state_draft').id)
 
   

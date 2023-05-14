@@ -1,27 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <!-- <record id="action_server_patient_report" model="ir.actions.server">
-        <field name="name">Download Patient Report</field>
-        <field name="model_id" ref="model_hospital_patient" />
-        <field name="state">code</field>
-        <field name="code">
-            action = {
-            'type': 'ir.actions.report',
-            'report_type': 'qweb-pdf',
-            'report_name': 'vertical_hospital.report_patient_template',
-            'model': 'hospital.patient',
-            'data': {'ids': records.ids},
-            }
-        </field>
-    </record>
-      <record id="action_server_patient_report" model="ir.actions.server">
-            <field name="name">Datos del Paciente</field>
-            <field name="model_id" ref="vertical_hospital.model_hospital_patient"/>
-            <field name="binding_model_id" ref="vertical_hospital.model_hospital_patient"/>
-            <field name="binding_view_types">tree</field>
-            <field name="state">code</field>
-            <field name="code">action = records.action_share()</field>
-        </record> -->
+
     <record id="action_patient_report" model="ir.actions.server">
         <field name="name">Imprimir Informe de Pacientes</field>
         <field name="model_id" ref="model_hospital_patient" />

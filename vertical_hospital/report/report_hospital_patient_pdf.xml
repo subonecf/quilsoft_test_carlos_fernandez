@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report id="patient_report"
+        model="hospital.patient"
+        string="Datos del Paciente"
+        name="vertical_hospital.report_patient_template"
+        file="vertical_hospital.report_patient_template" report_type="qweb-pdf" />
+
+
+        <template id="report_patient_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Datos del Paciente</h2>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Secuencia</th>
+                                    <th>Nombre</th>
+                                    <th>DNI</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="docs" t-as="o">
+                                    <td>
+                                        <span t-field="o.name" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.full_name" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.dni" />
+                                    </td>
+                                    <td>
+                                        <span t-field="o.state_id.name" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+   

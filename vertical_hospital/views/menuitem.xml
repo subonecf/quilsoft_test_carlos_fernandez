@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <!-- Menu principal para la aplicación de Hospital -->
+  
+        <menuitem id="hospital_main_menu" 
+        name="Hospital"
+        web_icon="vertical_hospital,/static/description/icon.svg" 
+        sequence="10"/>
+
+        
+        <!-- Submenú para Pacientes -->
+        <record id="hospital_menu_action_patient" model="ir.actions.act_window">
+            <field name="name">Pacientes</field>
+            <field name="res_model">hospital.patient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="hospital_submenu_patient" model="ir.ui.menu">
+            <field name="name">Pacientes</field>
+            <field name="parent_id" ref="hospital_main_menu"/>
+            <field name="action" ref="hospital_menu_action_patient"/>
+        </record>
+
+        <!-- Submenú para Tratamientos -->
+        <record id="hospital_menu_action_treatment" model="ir.actions.act_window">
+            <field name="name">Tratamientos</field>
+            <field name="res_model">hospital.treatment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="hospital_submenu_treatment" model="ir.ui.menu">
+            <field name="name">Tratamientos</field>
+            <field name="parent_id" ref="hospital_main_menu"/>
+            <field name="action" ref="hospital_menu_action_treatment"/>
+        </record>
+
+        <odoo>
+    <data>
+
+        <!-- Config Menu -->
+        <record id="menu_config" model="ir.ui.menu">
+            <field name="name">Configuracion</field>
+            <field name="parent_id" ref="hospital_main_menu"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+         <!-- Action to open the patient state view -->
+        <record id="action_patient_states" model="ir.actions.act_window">
+            <field name="name">Estados del paciente</field>
+            <field name="res_model">hospital.patient.state</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un nuevo estado de paciente
+                </p>
+                <p>
+                    Aquí puede administrar los estados de sus pacientes del hospital.
+                </p>
+            </field>
+        </record>
+
+        <!-- Sub Menu -->
+        <record id="menu_patient_states" model="ir.ui.menu">
+            <field name="name">Estados del paciente</field>
+            <field name="parent_id" ref="menu_config"/>
+            <field name="action" ref="action_patient_states"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+    </data>
+</odoo>
+
+    </data>
+</odoo>

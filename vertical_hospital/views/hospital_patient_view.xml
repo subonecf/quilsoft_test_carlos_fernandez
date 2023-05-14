@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+
+    <!-- Tree View -->
+        <record id="view_patient_tree" model="ir.ui.view">
+            <field name="name">hospital.patient.tree</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <tree string="Pacientes">
+                    <field name="name" />
+                    <field name="full_name" />
+                    <field name="dni" />
+                    <field name="state_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_patient_form" model="ir.ui.view">
+            <field name="name">hospital.patient.form</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <form string="Paciente">
+                    <header>
+                    
+                             
+                            <field name="state_id" widget="statusbar" options="{'clickable': '1'}"/>
+                         
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="full_name" />
+                            <field name="dni" />
+                            <field name="treatment_ids" widget="many2many_tags" />
+                            <field name="registration_date" />
+                            <field name="update_date" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+    </data>
+
+
+</odoo>

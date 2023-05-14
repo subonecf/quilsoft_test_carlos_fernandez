@@ -1,0 +1,13 @@
+<odoo>
+    <data noupdate="1">
+        <record id="state_draft" model="hospital.patient.state">
+            <field name="name">Borrador</field>
+        </record>
+        <record id="state_checkin" model="hospital.patient.state">
+            <field name="name">Alta</field>
+        </record>
+        <record id="state_checkout" model="hospital.patient.state">
+            <field name="name">Baja</field>
+        </record>
+    </data>
+</odoo>

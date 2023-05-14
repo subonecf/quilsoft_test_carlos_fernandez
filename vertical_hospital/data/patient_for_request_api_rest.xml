@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate="1">
+        <record id="data_patient_view" model="hospital.patient">
+            <field name="name">PA000001</field>
+            <field name="full_name">Carlos Benitez</field>
+            <field name="dni">3955487336</field>
+            <field name="state">draft</field>
+        </record>
+    </data>
+</odoo>
